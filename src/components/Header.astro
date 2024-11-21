@@ -1,0 +1,71 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<header class="m-0 px-4 bg-white shadow-[0_2px_8px_#b0e2c5] text-black">
+  <nav class="flex flex-row items-center justify-between px-6">
+    <h2 class="m-0 text-base">
+      <a href="/" class="no-underline text-xl font-medium text-black"
+        >{SITE_TITLE}</a
+      >
+    </h2>
+    <div class="internal-links flex">
+      <HeaderLink
+        style="text-decoration: none !important;"
+        href="/"
+        class={`flex flex-row items-center justify-center text-center w-32 px-2 py-4 text-black border-b-4 ${
+          Astro.url.pathname === "/" ? "border-[#b0e2c5]" : "border-transparent"
+        } `}
+      >
+        Home
+      </HeaderLink>
+      <HeaderLink
+        style="text-decoration: none !important;"
+        href="/blog"
+        class={`flex flex-row items-center justify-center text-center px-2 w-32 py-4 text-black border-b-4 ${
+          Astro.url.pathname === "/blog"
+            ? "border-[#b0e2c5]"
+            : "border-transparent"
+        } ]`}
+      >
+        Projects
+      </HeaderLink>
+      <HeaderLink
+        style="text-decoration: none !important;"
+        href="/about"
+        class={`flex flex-row items-center justify-center text-center w-32 px-2 py-4 text-black border-b-4 ${
+          Astro.url.pathname === "/about"
+            ? "border-[#b0e2c5]"
+            : "border-transparent"
+        }`}
+      >
+        Contact
+      </HeaderLink>
+    </div>
+    <div class="social-links flex items-center space-x-4 text-black">
+      <a href="" target="_blank" class="w-9 h-9 flex">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="fill-black"
+        >
+          <path
+            d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z"
+          ></path>
+        </svg>
+      </a>
+      <a href="" target="_blank" class="w-9 h-9 flex">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="fill-black"
+        >
+          <path
+            d="M18 8.101h-4v-.875h4v.875zm.84 6.125c-.77 2.258-5.949 2.966-5.949-1.56 0-4.583 5.508-4.377 6.053-.872.045.295.062.693.055 1.249h-4.41c-.104 1.715 1.76 1.932 2.404 1.184h1.847zm-4.211-2.333h2.624c-.115-1.687-2.36-1.81-2.624 0zm-5.858 4.076h-3.771v-8.73h4.056c3.194.047 3.255 3.176 1.587 4.028 2.019.735 2.086 4.702-1.872 4.702zm-1.896-5.134h1.965c1.464 0 1.696-1.859-.182-1.859h-1.783v1.859zm1.854 1.454h-1.854v1.947h1.824c1.782-.001 1.673-1.947.03-1.947zm3.271-10.289c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,124 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const line1Words = ["UI/UX", "Creative", "Brand", "Visual"];
+        const line2Words = ["Designer", "Innovator", "Strategist", "Artist"];
+
+        const typeEffect = (line1, line2, words1, words2) => {
+          let wordIndex = 0;
+          let charIndex = 0;
+          let isDeleting = false;
+
+          const type = () => {
+            const currentWord1 = words1[wordIndex];
+            const currentWord2 = words2[wordIndex];
+
+            if (isDeleting) {
+              // Delete bottom line first
+              line2.textContent = currentWord2.slice(0, charIndex--);
+              if (charIndex < 0) {
+                // Start typing top line after bottom line is fully deleted
+                isDeleting = false;
+                setTimeout(type, 500); // Pause before typing top line
+                return;
+              }
+            } else {
+              // Write top line
+              if (charIndex < currentWord1.length) {
+                line1.textContent = currentWord1.slice(0, charIndex++);
+                setTimeout(type, 150); // Typing speed
+              } else {
+                // Once top line is done, write bottom line
+                if (charIndex < currentWord2.length) {
+                  line2.textContent = currentWord2.slice(0, charIndex++);
+                  setTimeout(type, 150); // Typing speed
+                } else {
+                  // Pause, then start deleting bottom line
+                  setTimeout(() => {
+                    isDeleting = true;
+                    charIndex = currentWord2.length; // Reset charIndex to delete
+                    setTimeout(type, 1000); // Pause before deleting
+                  }, 2000); // Pause after fully typing both lines
+                }
+              }
+            }
+          };
+
+          type();
+        };
+
+        const line1 = document.getElementById("typewriter-line1");
+        const line2 = document.getElementById("typewriter-line2");
+
+        typeEffect(line1, line2, line1Words, line2Words);
+      });
+    </script>
+  </head>
+  <body class="h-screen flex flex-col bg-gray-50">
+    <Header />
+    <main
+      class="pt-16 pb-20 flex flex-col justify-center items-center gap-12 flex-grow"
+    >
+      <div class="flex flex-col gap-4">
+        <!-- First line -->
+        <p
+          id="typewriter-line1"
+          class="text-9xl font-bold tracking-wide text-center min-h-[4rem]"
+        >
+          <!-- Placeholder for JavaScript -->
+        </p>
+        <!-- Second line -->
+        <p
+          id="typewriter-line2"
+          class="text-9xl font-bold tracking-wide text-center min-h-[4rem]"
+        >
+          <!-- Placeholder for JavaScript -->
+        </p>
+      </div>
+
+      <div class="flex w-2/3 gap-24">
+        <ul class="flex flex-col gap-3">
+          <li>
+            <p class="font-light">AREAS</p>
+            <p>Graphic Design <br /> UI Design <br /> Brand Identity</p>
+          </li>
+          <li>
+            <p class="font-light">LOCATION</p>
+            <p>Périgueux, France</p>
+          </li>
+
+          <li>
+            <p class="font-light">EDUCATION</p>
+            <p>Bachelor’s in Multimedia & Communications</p>
+          </li>
+        </ul>
+
+        <ul class="w-[26rem]">
+          <li>
+            <p class="text-justify">
+              I share my creative world and the projects that fuel my passion.
+              With a strong love for design and content creation, I bring my
+              expertise to those looking to stand out with striking visuals and
+              impactful strategies. Whether you're looking for a website, or
+              communication guidance, you've come to the right place. Take a
+              look at my work, get inspired, and who knows – maybe we'll have
+              the chance to create something amazing together!
+            </p>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
