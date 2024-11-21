@@ -11,47 +11,66 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const line1Words = ["UI/UX", "Creative", "Brand", "Visual"];
-        const line2Words = ["Designer", "Innovator", "Strategist", "Artist"];
+        const line1Words = ["UI/UX", "Content", "Brand", "Graphic"];
+        const line2Words = ["Designer", "Creator", "Manager", "Designer"];
 
-        const typeEffect = (line1, line2, words1, words2) => {
-          let wordIndex = 0;
-          let charIndex = 0;
-          let isDeleting = false;
+        const typewriter = (line1, line2, words1, words2) => {
+          let wordIndex = 0; // Tracks which word we're on
+          let charIndex = 0; // Tracks the character position within the word
+          let isDeleting = false; // Tracks whether we're typing or deleting
+          let isBottomDeleting = false; // Tracks when the bottom line is being deleted
 
           const type = () => {
-            const currentWord1 = words1[wordIndex];
-            const currentWord2 = words2[wordIndex];
+            const currentWord1 = words1[wordIndex]; // Top line word
+            const currentWord2 = words2[wordIndex]; // Bottom line word
 
-            if (isDeleting) {
-              // Delete bottom line first
-              line2.textContent = currentWord2.slice(0, charIndex--);
-              if (charIndex < 0) {
-                // Start typing top line after bottom line is fully deleted
-                isDeleting = false;
-                setTimeout(type, 500); // Pause before typing top line
-                return;
+            if (!isDeleting) {
+              // Typing phase
+              if (charIndex <= currentWord1.length) {
+                // Type top line
+                line1.textContent = currentWord1.slice(0, charIndex);
+              } else if (
+                charIndex - currentWord1.length <=
+                currentWord2.length
+              ) {
+                // Type bottom line after top line is complete
+                line2.textContent = currentWord2.slice(
+                  0,
+                  charIndex - currentWord1.length
+                );
+              }
+
+              if (charIndex === currentWord1.length + currentWord2.length) {
+                // After fully typing both lines, start deleting after a delay
+                setTimeout(() => {
+                  isDeleting = true;
+                  isBottomDeleting = true; // Start deleting bottom line first
+                }, 2000); // Pause before deleting
               }
             } else {
-              // Write top line
-              if (charIndex < currentWord1.length) {
-                line1.textContent = currentWord1.slice(0, charIndex++);
-                setTimeout(type, 150); // Typing speed
+              // Deleting phase
+              if (isBottomDeleting && charIndex > currentWord1.length) {
+                // Delete bottom line first
+                line2.textContent = currentWord2.slice(
+                  0,
+                  charIndex - currentWord1.length
+                );
               } else {
-                // Once top line is done, write bottom line
-                if (charIndex < currentWord2.length) {
-                  line2.textContent = currentWord2.slice(0, charIndex++);
-                  setTimeout(type, 150); // Typing speed
-                } else {
-                  // Pause, then start deleting bottom line
-                  setTimeout(() => {
-                    isDeleting = true;
-                    charIndex = currentWord2.length; // Reset charIndex to delete
-                    setTimeout(type, 1000); // Pause before deleting
-                  }, 2000); // Pause after fully typing both lines
-                }
+                // Delete top line
+                isBottomDeleting = false;
+                line1.textContent = currentWord1.slice(0, charIndex);
+              }
+
+              if (charIndex === 0) {
+                // Once both lines are deleted, move to the next word
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words1.length; // Loop through words
               }
             }
+
+            // Adjust character index and speed
+            charIndex += isDeleting ? -1 : 1;
+            setTimeout(type, isDeleting ? 50 : 100); // Faster for deleting, slower for typing
           };
 
           type();
@@ -60,7 +79,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         const line1 = document.getElementById("typewriter-line1");
         const line2 = document.getElementById("typewriter-line2");
 
-        typeEffect(line1, line2, line1Words, line2Words);
+        typewriter(line1, line2, line1Words, line2Words);
       });
     </script>
   </head>
@@ -73,14 +92,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <!-- First line -->
         <p
           id="typewriter-line1"
-          class="text-9xl font-bold tracking-wide text-center min-h-[4rem]"
+          class="uidesign text-8xl -indent-20 font-bold tracking-wide min-h-[4rem]"
         >
           <!-- Placeholder for JavaScript -->
         </p>
         <!-- Second line -->
         <p
           id="typewriter-line2"
-          class="text-9xl font-bold tracking-wide text-center min-h-[4rem]"
+          class="uidesign text-8xl indent-20 font-bold tracking-wide min-h-[4rem]"
         >
           <!-- Placeholder for JavaScript -->
         </p>
