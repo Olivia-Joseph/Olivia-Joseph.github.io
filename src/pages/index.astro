@@ -53,7 +53,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 // Delete bottom line first
                 line2.textContent = currentWord2.slice(
                   0,
-                  charIndex - currentWord1.length
+                  charIndex - currentWord1.length - 1
                 );
               } else {
                 // Delete top line
@@ -90,20 +90,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <main
       class="pt-16 pb-20 flex flex-col justify-center items-center gap-12 flex-grow"
     >
-      <div class="flex flex-col gap-2">
-        <!-- First line -->
+      <div class="flex flex-col gap-2 h-[17rem] w-[56rem]">
         <p
           id="typewriter-line1"
-          class="uidesign text-8xl -indent-20 font-bold tracking-wide min-h-[4rem]"
+          class="uidesign text-8xl text-left font-bold tracking-wide min-h-[4rem]"
         >
-          <!-- Placeholder for JavaScript -->
         </p>
-        <!-- Second line -->
+
         <p
           id="typewriter-line2"
-          class="uidesign text-8xl indent-20 font-bold tracking-wide min-h-[4rem]"
+          class="uidesign text-8xl text-left indent-32 font-bold tracking-wide min-h-[4rem]"
         >
-          <!-- Placeholder for JavaScript -->
         </p>
       </div>
 
