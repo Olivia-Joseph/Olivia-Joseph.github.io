@@ -4,13 +4,17 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class="m-0 px-4 bg-white shadow-[0_2px_8px_#b0e2c5] text-black w-full">
-  <nav class="flex flex-row items-center justify-between px-6">
-    <h2 class="m-0 text-base">
-      <a href="/" class="no-underline text-xl font-medium text-black"
-        >{SITE_TITLE}</a
-      >
-    </h2>
-    <div class="internal-links flex">
+  <nav class="flex flex-row items-center justify-between px-6 h-16 rounded-xl">
+    <div class="flex w-full justify-start items-center gap-16">
+      <img src="../public/Burger.svg" alt="" />
+      <h2 class="m-0 text-base">
+        <a href="/" class="no-underline text-xl font-light text-black"
+          >{SITE_TITLE}</a
+        >
+      </h2>
+    </div>
+
+    <div class="hidden internal-links flex">
       <HeaderLink
         style="text-decoration: none !important;"
         href="/"
@@ -43,7 +47,7 @@ import { SITE_TITLE } from "../consts";
         Contact
       </HeaderLink>
     </div>
-    <div class="social-links flex items-center space-x-4 text-black">
+    <div class="social-links hidden flex items-center space-x-4 text-black">
       <a href="" target="_blank" class="w-9 h-9 flex">
         <svg
           xmlns="http://www.w3.org/2000/svg"
