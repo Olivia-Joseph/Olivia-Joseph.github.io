@@ -3,18 +3,149 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class="m-0 px-4 bg-white shadow-[0_2px_8px_#b0e2c5] text-black w-full">
-  <nav class="flex flex-row items-center justify-between px-6 h-16 rounded-xl">
-    <div class="flex w-full justify-start items-center gap-16">
-      <img src="../public/Burger.svg" alt="" />
+<header
+  class="mt-5 px-4 bg-white shadow-[0_2px_8px_#b0e2c5] text-black w-11/12 flex justify-start rounded-xl"
+>
+  <nav class="flex w-full flex-row items-center justify-between px-6">
+    <div class="flex items-center w-full md:w-36 justify-between shrink-0">
+      <div class="items-center md:hidden">
+        <svg
+          width="28"
+          height="27"
+          viewBox="0 0 28 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <ellipse
+            cx="1.92455"
+            cy="0.939839"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="14.1936"
+            cy="0.939839"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="26.4626"
+            cy="0.939839"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="26.4626"
+            cy="13.2217"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="14.1936"
+            cy="13.2217"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="1.92455"
+            cy="13.2217"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="1.92455"
+            cy="25.5036"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="14.1936"
+            cy="25.5036"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="26.4626"
+            cy="25.5036"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+        </svg>
+      </div>
+
       <h2 class="m-0 text-base">
         <a href="/" class="no-underline text-xl font-light text-black"
           >{SITE_TITLE}</a
         >
       </h2>
+
+      <div class="items-center invisible md:hidden">
+        <svg
+          width="28"
+          height="27"
+          viewBox="0 0 28 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <ellipse
+            cx="1.92455"
+            cy="0.939839"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="14.1936"
+            cy="0.939839"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="26.4626"
+            cy="0.939839"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="26.4626"
+            cy="13.2217"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="14.1936"
+            cy="13.2217"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="1.92455"
+            cy="13.2217"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="1.92455"
+            cy="25.5036"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="14.1936"
+            cy="25.5036"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+          <ellipse
+            cx="26.4626"
+            cy="25.5036"
+            rx="0.956774"
+            ry="0.934468"
+            fill="black"></ellipse>
+        </svg>
+      </div>
     </div>
 
-    <div class="hidden internal-links flex">
+    <div class="invisible internal-links flex md:visible">
       <HeaderLink
         style="text-decoration: none !important;"
         href="/"
@@ -47,7 +178,9 @@ import { SITE_TITLE } from "../consts";
         Contact
       </HeaderLink>
     </div>
-    <div class="social-links hidden flex items-center space-x-4 text-black">
+    <div
+      class="social-links invisible flex items-center space-x-4 text-black md:visible"
+    >
       <a href="" target="_blank" class="w-9 h-9 flex">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,142 +1,118 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const line1Words = ["UI/UX", "Content", "Brand", "Graphic"];
-        const line2Words = ["Designer", "Creator", "Manager", "Designer"];
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main
+    class="pt-16 pb-20 flex flex-col justify-center items-center gap-12 flex-grow"
+  >
+    <div class="flex flex-col gap-2 h-[17rem] w-[56rem]">
+      <p
+        id="typewriter-line1"
+        class="uidesign text-8xl text-left font-bold tracking-wide min-h-[4rem]"
+      >
+      </p>
 
-        const typewriter = (line1, line2, words1, words2) => {
-          let wordIndex = 0; // Tracks which word we're on
-          let charIndex = 0; // Tracks the character position within the word
-          let isDeleting = false; // Tracks whether we're typing or deleting
-          let isBottomDeleting = false; // Tracks when the bottom line is being deleted
+      <p
+        id="typewriter-line2"
+        class="uidesign text-8xl text-left indent-32 font-bold tracking-wide min-h-[4rem]"
+      >
+      </p>
+    </div>
 
-          const type = () => {
-            const currentWord1 = words1[wordIndex]; // Top line word
-            const currentWord2 = words2[wordIndex]; // Bottom line word
+    <div class="flex w-3/4 gap-20">
+      <ul class="flex flex-col gap-3 w-[38rem]">
+        <li>
+          <p class="font-light">AREAS</p>
+          <p>Graphic Design <br /> UI Design <br /> Brand Identity</p>
+        </li>
+        <li>
+          <p class="font-light">LOCATION</p>
+          <p>Périgueux, France</p>
+        </li>
 
-            if (!isDeleting) {
-              // Typing phase
-              if (charIndex <= currentWord1.length) {
-                // Type top line
-                line1.textContent = currentWord1.slice(0, charIndex);
-              } else if (
-                charIndex - currentWord1.length <=
-                currentWord2.length
-              ) {
-                // Type bottom line after top line is complete
-                line2.textContent = currentWord2.slice(
-                  0,
-                  charIndex - currentWord1.length
-                );
-              }
+        <li>
+          <p class="font-light">EDUCATION</p>
+          <p>Bachelor’s in Multimedia & Communications</p>
+        </li>
+      </ul>
 
-              if (charIndex === currentWord1.length + currentWord2.length) {
-                // After fully typing both lines, start deleting after a delay
-                setTimeout(() => {
-                  isDeleting = true;
-                  isBottomDeleting = true; // Start deleting bottom line first
-                }, 2000); // Pause before deleting
-              }
-            } else {
-              // Deleting phase
-              if (isBottomDeleting && charIndex > currentWord1.length) {
-                // Delete bottom line first
-                line2.textContent = currentWord2.slice(
-                  0,
-                  charIndex - currentWord1.length - 1
-                );
-              } else {
-                // Delete top line
-                isBottomDeleting = false;
-                line1.textContent = currentWord1.slice(0, charIndex);
-              }
+      <ul class="w-[38rem]">
+        <li>
+          <p class="text-justify">
+            I share my creative world and the projects that fuel my passion.
+            With a strong love for design and content creation, I bring my
+            expertise to those looking to stand out with striking visuals and
+            impactful strategies. Whether you're looking for a website, or
+            communication guidance, you've come to the right place. Take a look
+            at my work, get inspired, and who knows – maybe we'll have the
+            chance to create something amazing together!
+          </p>
+        </li>
+      </ul>
+    </div>
+  </main>
 
-              if (charIndex === 0) {
-                // Once both lines are deleted, move to the next word
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words1.length; // Loop through words
-              }
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const line1Words = ["UI/UX", "Content", "Brand", "Graphic"];
+      const line2Words = ["Designer", "Creator", "Manager", "Designer"];
+
+      const typewriter = (line1, line2, words1, words2) => {
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isBottomDeleting = false;
+
+        const type = () => {
+          const currentWord1 = words1[wordIndex];
+          const currentWord2 = words2[wordIndex];
+
+          if (!isDeleting) {
+            if (charIndex <= currentWord1.length) {
+              line1.textContent = currentWord1.slice(0, charIndex);
+            } else if (charIndex - currentWord1.length <= currentWord2.length) {
+              line2.textContent = currentWord2.slice(
+                0,
+                charIndex - currentWord1.length
+              );
             }
 
-            // Adjust character index and speed
-            charIndex += isDeleting ? -1 : 1;
-            setTimeout(type, isDeleting ? 50 : 100); // Faster for deleting, slower for typing
-          };
+            if (charIndex === currentWord1.length + currentWord2.length) {
+              setTimeout(() => {
+                isDeleting = true;
+                isBottomDeleting = true;
+              }, 2000);
+            }
+          } else {
+            if (isBottomDeleting && charIndex > currentWord1.length) {
+              line2.textContent = currentWord2.slice(
+                0,
+                charIndex - currentWord1.length - 1
+              );
+            } else {
+              isBottomDeleting = false;
+              line1.textContent = currentWord1.slice(0, charIndex);
+            }
 
-          type();
+            if (charIndex === 0) {
+              isDeleting = false;
+              wordIndex = (wordIndex + 1) % words1.length;
+            }
+          }
+
+          charIndex += isDeleting ? -1 : 1;
+          setTimeout(type, isDeleting ? 50 : 100);
         };
 
-        const line1 = document.getElementById("typewriter-line1");
-        const line2 = document.getElementById("typewriter-line2");
+        type();
+      };
 
-        typewriter(line1, line2, line1Words, line2Words);
-      });
-    </script>
-  </head>
-  <body
-    class="h-screen flex flex-col bg-gray-50 justify-center items-center w-full"
-  >
-    <Header />
-    <main
-      class="pt-16 pb-20 flex flex-col justify-center items-center gap-12 flex-grow"
-    >
-      <div class="flex flex-col gap-2 h-[17rem] w-[56rem]">
-        <p
-          id="typewriter-line1"
-          class="uidesign text-8xl text-left font-bold tracking-wide min-h-[4rem]"
-        >
-        </p>
+      const line1 = document.getElementById("typewriter-line1");
+      const line2 = document.getElementById("typewriter-line2");
 
-        <p
-          id="typewriter-line2"
-          class="uidesign text-8xl text-left indent-32 font-bold tracking-wide min-h-[4rem]"
-        >
-        </p>
-      </div>
-
-      <div class="flex w-3/4 gap-20">
-        <ul class="flex flex-col gap-3 w-[38rem]">
-          <li>
-            <p class="font-light">AREAS</p>
-            <p>Graphic Design <br /> UI Design <br /> Brand Identity</p>
-          </li>
-          <li>
-            <p class="font-light">LOCATION</p>
-            <p>Périgueux, France</p>
-          </li>
-
-          <li>
-            <p class="font-light">EDUCATION</p>
-            <p>Bachelor’s in Multimedia & Communications</p>
-          </li>
-        </ul>
-
-        <ul class="w-[38rem]">
-          <li>
-            <p class="text-justify">
-              I share my creative world and the projects that fuel my passion.
-              With a strong love for design and content creation, I bring my
-              expertise to those looking to stand out with striking visuals and
-              impactful strategies. Whether you're looking for a website, or
-              communication guidance, you've come to the right place. Take a
-              look at my work, get inspired, and who knows – maybe we'll have
-              the chance to create something amazing together!
-            </p>
-          </li>
-        </ul>
-      </div>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+      typewriter(line1, line2, line1Words, line2Words);
+    });
+  </script>
+</BaseLayout>
