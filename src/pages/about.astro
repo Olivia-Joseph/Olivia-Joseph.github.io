@@ -1,105 +1,87 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="bg-gray-100">
-    <Header />
-    <main
-      class="flex flex-col gap-10 py-5 md:flex-row justify-center items-center md:py-10"
-    >
-      <div
-        class="flex flex-col justify-center items-center px-9 gap-3 md:gap-6 md:w-2/5"
-      >
-        <h2
-          class="text-2xl underline underline-offset-4 decoration-green-200 decoration-4 font-semibold"
-        >
-          Contact
-        </h2>
-        <p class="text-justify">
-          Do you have an idea in mind? Want to work together? I'm always up for
-          chatting, discussing creative projects, and seeing what we can create
-          together! Whether it’s a website, a video, or boosting your online
-          presence, don’t hesitate to send me a message. Fill out the form below
-          or write to me directly at olivia.joseph.pro@gmail.com – I’ll get back
-          to you quickly, I promise!
-        </p>
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main
+    class="w-full p-6 flex flex-col items-center justify-center h-screen gap-10 text-sm"
+  >
+    <div class="flex flex-col items-center gap-3">
+      <h2 class="text-xl underline decoration-green-200 decoration-4">
+        Let's Talk!
+      </h2>
+      <p class="text-justify">
+        Do you have an idea in mind? Want to work together? I'm always up for
+        chatting, discussing creative projects, and seeing what we can create
+        together! Whether it’s a website, a video, or boosting your online
+        presence, don’t hesitate to send me a message. Fill out the form below
+        or write to me directly at olivia.joseph.pro@gmail.com – I’ll get back
+        to you quickly, I promise!
+      </p>
+    </div>
+
+    <form action="" class="flex flex-col items-center w-full gap-2">
+      <div class="w-full">
+        <div class="flex flex-col gap-2">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            class="border-b-2 border-green-200 rounded-md h-8"
+          />
+        </div>
+
+        <div class="flex flex-col">
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lastname"
+            class="border-b-2 border-green-200 rounded-md h-8"
+          />
+        </div>
       </div>
 
-      <form
-        action=""
-        class="flex flex-col w-full px-10 gap-3 justify-center items-center md:w-2/5 md:gap-10"
-      >
-        <div class="md:flex w-full md:gap-3">
-          <div class="flex flex-col w-full gap-1">
-            <label for="fname">First Name</label>
-            <input
-              type="text"
-              id="fname"
-              name="firstname"
-              class="border-b-2 border-green-300 rounded-md h-8"
-            />
-          </div>
-
-          <div class="flex flex-col w-full gap-1">
-            <label for="lname">Last Name</label>
-            <input
-              type="text"
-              id="lname"
-              name="lastname"
-              class="border-b-2 border-green-300 rounded-md h-8"
-            />
-          </div>
+      <div class="w-full gap-2">
+        <div class="flex flex-col">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="border-b-2 border-green-200 rounded-md h-8"
+          />
         </div>
 
-        <div class="md:flex w-full md:gap-3">
-          <div class="flex flex-col w-full gap-1">
-            <label for="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              class="border-b-2 border-green-300 rounded-md h-8"
-            />
-          </div>
-
-          <div class="flex flex-col w-full gap-1">
-            <label for="subject">Subject</label>
-            <select
-              id="subject"
-              name="subject"
-              class="border-b-2 border-green-300 rounded-md h-8 w-full"
-            >
-              <option value="general">General Inquiries</option>
-              <option value="media">Media & PR</option>
-              <option value="work">Work with Me</option>
-            </select>
-          </div>
+        <div class="flex flex-col">
+          <label for="subject">Subject</label>
+          <select
+            id="subject"
+            name="subject"
+            class="border-b-2 border-green-200 rounded-md h-8 w-full"
+          >
+            <option value="general">General Inquiries</option>
+            <option value="media">Media & PR</option>
+            <option value="work">Work with Me</option>
+          </select>
         </div>
+      </div>
 
-        <div class="flex flex-col w-full gap-1">
-          <label for="desc">Description</label>
-          <textarea
-            id="desc"
-            name="desc"
-            class="border-b-2 border-green-300 rounded-md h-20 w-full"
-          ></textarea>
-        </div>
+      <div class="flex flex-col w-full">
+        <label for="desc">Description</label>
+        <textarea
+          id="desc"
+          name="desc"
+          class="border-b-2 border-green-200 rounded-md h-20 w-full"></textarea>
+      </div>
 
-        <input
-          type="submit"
-          value="Submit"
-          class="bg-green-300 w-24 rounded-md h-8"
-        />
-      </form>
-    </main>
-    <Footer />
-  </body>
-</html>
+      <input
+        type="submit"
+        value="Submit"
+        class="bg-green-200 w-24 rounded-md h-8"
+      />
+    </form>
+  </main>
+</BaseLayout>
