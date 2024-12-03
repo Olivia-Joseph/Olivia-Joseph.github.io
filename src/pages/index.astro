@@ -5,24 +5,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main
-    class="pt-16 pb-20 flex flex-col justify-center items-center gap-12 flex-grow"
+    class="w-full p-6 flex flex-col items-center justify-center h-screen gap-10"
   >
-    <div class="flex flex-col gap-2 h-[17rem] w-[56rem]">
+    <div>
       <p
         id="typewriter-line1"
-        class="uidesign text-8xl text-left font-bold tracking-wide min-h-[4rem]"
+        class="uidesign text-5xl md:text-8xl text-left font-bold tracking-wide min-h-[3rem]"
       >
       </p>
 
       <p
         id="typewriter-line2"
-        class="uidesign text-8xl text-left indent-32 font-bold tracking-wide min-h-[4rem]"
+        class="uidesign text-5xl md:text-8xl text-left indent-8 font-bold tracking-wide min-h-[3rem]"
       >
       </p>
     </div>
 
-    <div class="flex w-3/4 gap-20">
-      <ul class="flex flex-col gap-3 w-[38rem]">
+    <div class="w-full text-sm flex flex-col gap-10">
+      <ul>
         <li>
           <p class="font-light">AREAS</p>
           <p>Graphic Design <br /> UI Design <br /> Brand Identity</p>
@@ -38,19 +38,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </li>
       </ul>
 
-      <ul class="w-[38rem]">
-        <li>
-          <p class="text-justify">
-            I share my creative world and the projects that fuel my passion.
-            With a strong love for design and content creation, I bring my
-            expertise to those looking to stand out with striking visuals and
-            impactful strategies. Whether you're looking for a website, or
-            communication guidance, you've come to the right place. Take a look
-            at my work, get inspired, and who knows – maybe we'll have the
-            chance to create something amazing together!
-          </p>
-        </li>
-      </ul>
+      <div class="flex w-full justify-end">
+        <p class="text-justify w-3/4">
+          I share my creative world and the projects that fuel my passion. With
+          a strong love for design and content creation, I bring my expertise to
+          those looking to stand out with striking visuals and impactful
+          strategies. Whether you're looking for a website, or communication
+          guidance, you've come to the right place. Take a look at my work, get
+          inspired, and who knows – maybe we'll have the chance to create
+          something amazing together!
+        </p>
+      </div>
     </div>
   </main>
 

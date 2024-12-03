@@ -11,10 +11,11 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
+  height: 100vh;
 }
 
 .uidesign{
-  font-size: 148px;
-  -webkit-text-stroke: 2px #B0E2C5;
+  -webkit-text-stroke: 1px #86efac;
   color: transparent;
 }
