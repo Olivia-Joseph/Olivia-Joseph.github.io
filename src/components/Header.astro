@@ -4,7 +4,7 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header
-  class="mt-5 px-4 bg-white shadow-[0_0px_10px] shadow-green-300 text-black w-11/12 flex justify-start rounded-xl"
+  class="mt-5 px-4 bg-white shadow-[0_0px_10px] h-16 shadow-green-300 text-black w-11/12 flex justify-start rounded-xl"
 >
   <nav class="flex w-full flex-row items-center justify-between px-6">
     <div class="flex items-center w-full md:w-36 justify-between shrink-0">
@@ -86,6 +86,7 @@ import { SITE_TITLE } from "../consts";
           viewBox="0 0 28 27"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          class="hidden"
         >
           <ellipse
             cx="1.92455"
@@ -145,7 +146,7 @@ import { SITE_TITLE } from "../consts";
       </div>
     </div>
 
-    <div class="invisible internal-links flex md:visible">
+    <div class="hidden internal-links md:flex md:visible">
       <HeaderLink
         style="text-decoration: none !important;"
         href="/"
@@ -179,7 +180,7 @@ import { SITE_TITLE } from "../consts";
       </HeaderLink>
     </div>
     <div
-      class="social-links invisible flex items-center space-x-4 text-black md:visible"
+      class="social-links hidden items-center space-x-4 text-black md:flex md:visible"
     >
       <a href="" target="_blank" class="w-9 h-9 flex">
         <svg
