@@ -4,24 +4,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main
-    class="w-full p-6 flex flex-col items-center justify-center h-screen gap-10"
-  >
+  <main class="w-full p-6 flex flex-col items-center justify-center gap-10">
     <div>
       <p
         id="typewriter-line1"
-        class="uidesign text-5xl md:text-8xl text-left font-bold tracking-wide min-h-[3rem]"
+        class="uidesign text-5xl md:text-9xl text-left font-bold tracking-wide min-h-[3rem] md:min-h-32"
       >
       </p>
 
       <p
         id="typewriter-line2"
-        class="uidesign text-5xl md:text-8xl text-left indent-8 font-bold tracking-wide min-h-[3rem]"
+        class="uidesign text-5xl md:text-9xl text-left indent-8 md:indent-32 font-bold tracking-wide min-h-[3rem] md:min-h-32"
       >
       </p>
     </div>
 
-    <div class="w-full text-sm flex flex-col gap-10">
+    <div
+      class="w-full text-sm flex flex-col gap-10 md:text-base md:w-3/4 md:gap-5"
+    >
       <ul>
         <li>
           <p class="font-light">AREAS</p>
@@ -38,8 +38,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </li>
       </ul>
 
-      <div class="flex w-full justify-end">
-        <p class="text-justify w-3/4">
+      <div class="flex w-full justify-end md:text-base">
+        <p class="text-justify w-3/4 md:w-1/2">
           I share my creative world and the projects that fuel my passion. With
           a strong love for design and content creation, I bring my expertise to
           those looking to stand out with striking visuals and impactful
@@ -49,6 +49,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           something amazing together!
         </p>
       </div>
+    </div>
+
+    <div
+      class="bg-white flex border border-black rounded-md text-sm p-2 md:w-2/4 md:justify-center md:text-lg"
+    >
+      <ul class="flex gap-3 md:w-full md:justify-between md:px-10">
+        <li class="flex flex-col items-center text-center">
+          <p class="font-bold">50+</p>
+          <p>Websites Created</p>
+        </li>
+        <li class="flex flex-col items-center text-center">
+          <p class="font-bold">30+</p>
+          <p>Brands Designed</p>
+        </li>
+        <li class="flex flex-col items-center text-center">
+          <p class="font-bold">3</p>
+          <p>Years Experience</p>
+        </li>
+      </ul>
     </div>
   </main>
 
