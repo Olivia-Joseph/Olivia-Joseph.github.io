@@ -4,7 +4,7 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header
-  class="px-4 bg-white shadow-[0_0px_10px] min-h-14 shadow-green-300 text-black w-11/12 flex justify-start rounded-xl"
+  class="px-4 bg-white shadow-[0_0px_8px] min-h-14 shadow-[#5356C6] text-black w-11/12 flex justify-start rounded-xl"
 >
   <nav class="flex w-full flex-row items-center justify-between px-6">
     <div class="flex items-center w-full md:w-36 justify-between shrink-0">
@@ -151,7 +151,7 @@ import { SITE_TITLE } from "../consts";
         style="text-decoration: none !important;"
         href="/"
         class={`flex flex-row items-center justify-center text-center w-32 px-2 py-4 text-black border-b-4 ${
-          Astro.url.pathname === "/" ? "border-green-300" : "border-transparent"
+          Astro.url.pathname === "/" ? "border-[#5356C6]" : "border-transparent"
         } `}
       >
         Home
@@ -161,7 +161,7 @@ import { SITE_TITLE } from "../consts";
         href="/blog"
         class={`flex flex-row items-center justify-center text-center px-2 w-32 py-4 text-black border-b-4 ${
           Astro.url.pathname === "/blog"
-            ? "border-green-300"
+            ? "border-[#5356C6]"
             : "border-transparent"
         } ]`}
       >
@@ -172,7 +172,7 @@ import { SITE_TITLE } from "../consts";
         href="/about"
         class={`flex flex-row items-center justify-center text-center w-32 px-2 py-4 text-black border-b-4 ${
           Astro.url.pathname === "/about"
-            ? "border-green-300"
+            ? "border-[#5356C6]"
             : "border-transparent"
         }`}
       >
