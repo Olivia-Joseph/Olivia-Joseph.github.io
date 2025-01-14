@@ -15,25 +15,58 @@ const posts = (await getCollection("blog")).sort(
   >
     <h1 class="text-4xl font-black text-left w-full">CASE STUDIES</h1>
 
-    <ul>
+    <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
         posts.map((post) => (
-          <li>
-            <a href={`/blog/${post.slug}/`}>
-              <img
-                class=" corner w-[330px] h-[330px] bg-gray-500"
-                src={post.data.heroImage}
-              />
-              <h4 class="title">{post.data.title}</h4>
-              <div class=" w-12 flex items-center text-center justify-center bg-[#EA83FF] font-black rounded-full">
+          <li class="relative rounded-xl overflow-hidden" data-year={new Date(post.data.pubDate).getFullYear()}>
+            <a href={`/blog/${post.slug}/`} class="block group">
+              <!-- Date Overlay -->
+              <div class="date-pill absolute top-2 left-2 transform w-16 flex items-center justify-center text-black font-black rounded-full shadow-lg z-10">
                 <p class="date">
                   <FormattedDate date={post.data.pubDate} />
                 </p>
               </div>
+              <!-- Cover Image -->
+              <img
+                class="w-[330px] h-[330px] object-cover rounded-xl group-hover:opacity-90"
+                src={post.data.heroImage}
+                alt={post.data.title}
+              />
+              <!-- Title -->
+              <h4 class="title mt-4 font-bold text-lg">
+                {post.data.title}
+              </h4>
             </a>
           </li>
         ))
       }
     </ul>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const datePills = document.querySelectorAll(".date-pill");
+
+      datePills.forEach((pill) => {
+        const year = parseInt(pill.closest("li").getAttribute("data-year"));
+
+        // Define colors based on the year
+        let color;
+        switch (year) {
+          case 2024:
+            color = "#EA83FF"; // Purple for 2024
+            break;
+          case 2023:
+            color = "#33FFB5"; // Green for 2023
+            break;
+          default:
+            color = "#FFF820"; // Default gray
+        }
+
+        // Apply the background color to the pill
+        pill.style.backgroundColor = color;
+      });
+    });
+  </script>
 </BaseLayout>
+
