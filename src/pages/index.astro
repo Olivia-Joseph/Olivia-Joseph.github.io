@@ -4,7 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main class="w-full p-6 flex flex-col items-center justify-center gap-10">
+  <main class="w-full p-6 flex flex-col items-center justify-center gap-8">
     <div>
       <p
         id="typewriter-line1"
@@ -19,121 +19,125 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       </p>
     </div>
 
-    <!-- Who Am I Section -->
-    <section class="bg-[#F2B2FF] rounded-lg p-4 max-w-2xl text-justify w-11/12">
-      <h2 class="text-[19px] font-black mb-2">WHO AM I?</h2>
-      <p class="text-gray-700 text-[9px]">
-        I share my creative world and the projects that fuel my passion. With a
-        strong love for design and content creation, I bring my expertise to
-        those looking to stand out with striking visuals and impactful
-        strategies. Whether you're looking for a website, or communication
-        guidance, you've come to the right place. Take a look at my work, get
-        inspired, and who knows – maybe we'll have the chance to create
-        something amazing together!
-      </p>
-    </section>
-
-    <!-- Areas & Location Section -->
-    <section class="grid grid-cols-2 md:grid-cols-2 gap-2 mt-10 w-11/12">
-      <div class="bg-[#33FFB5] rounded-lg p-4">
-        <h3 class="text-xl font-black mb-2">AREAS</h3>
-        <ul class="text-xs">
-          <li>Graphic Design</li>
-          <li>UI Design</li>
-          <li>Brand Identity</li>
-          <li>Web Design</li>
-          <li>SEO</li>
-        </ul>
-      </div>
-      <div class="bg-[#FFF820] rounded-lg p-4">
-        <h3 class="text-xl font-black mb-2">LOCATION</h3>
-        <p class="text-xs">
-          Bachelor’s in Multimedia & Communications from the University of
-          Limoges, France
+    <section class="w-full flex flex-col items-center justify-center gap-3 p-3">
+      <!-- Who Am I Section -->
+      <section
+        class="bg-[#F2B2FF] rounded-lg p-4 max-w-2xl text-justify w-full"
+      >
+        <h2 class="text-[19px] font-bold mb-2">WHO AM I?</h2>
+        <p class="text-gray-700 text-[9px]">
+          I share my creative world and the projects that fuel my passion. With
+          a strong love for design and content creation, I bring my expertise to
+          those looking to stand out with striking visuals and impactful
+          strategies. Whether you're looking for a website, or communication
+          guidance, you've come to the right place. Take a look at my work, get
+          inspired, and who knows – maybe we'll have the chance to create
+          something amazing together!
         </p>
-      </div>
+      </section>
+
+      <!-- Areas & Location Section -->
+      <section class="grid grid-cols-2 md:grid-cols-2 gap-3 w-full">
+        <div class="bg-[#33FFB5] rounded-lg p-4">
+          <h3 class="text-[19px] font-bold mb-2">AREAS</h3>
+          <ul class="text-[9px]">
+            <li>Graphic Design</li>
+            <li>UI Design</li>
+            <li>Brand Identity</li>
+            <li>Web Design</li>
+            <li>SEO</li>
+          </ul>
+        </div>
+        <div class="bg-[#FFF820] rounded-lg p-4">
+          <h3 class="text-[19px] font-bold mb-2">LOCATION</h3>
+          <p class="text-[9px]">
+            Bachelor’s in Multimedia & Communications from the University of
+            Limoges, France
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="bg-[#8C8FFF] rounded-lg p-4 max-w-2xl text-justify w-full"
+      >
+        <h2 class="text-[19px] font-bold mb-2">STATS</h2>
+        <ul class="flex gap-3 md:w-full justify-between md:px-10">
+          <li class="flex flex-col items-center text-center">
+            <p class="text-[19px] font-bold">50+</p>
+            <p class="text-[9px]">Websites Created</p>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <p class="text-[19px] font-bold">30+</p>
+            <p class="text-[9px]">Brands Designed</p>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <p class="text-[19px] font-bold">3</p>
+            <p class="text-[9px]">Years Experience</p>
+          </li>
+        </ul>
+      </section>
     </section>
   </main>
+</BaseLayout>
 
-  <!-- Stats Section -->
-  <section
-    class="bg-[#8C8FFF] flex border border-black rounded-md text-sm p-2 md:w-2/4 md:justify-center md:text-lg"
-  >
-    <ul class="flex gap-3 md:w-full md:justify-between md:px-10">
-      <li class="flex flex-col items-center text-center">
-        <p class="font-bold">50+</p>
-        <p>Websites Created</p>
-      </li>
-      <li class="flex flex-col items-center text-center">
-        <p class="font-bold">30+</p>
-        <p>Brands Designed</p>
-      </li>
-      <li class="flex flex-col items-center text-center">
-        <p class="font-bold">3</p>
-        <p>Years Experience</p>
-      </li>
-    </ul>
-  </section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const line1Words = ["UI/UX", "Content", "Brand", "Graphic"];
+    const line2Words = ["Designer", "Creator", "Manager", "Designer"];
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const line1Words = ["UI/UX", "Content", "Brand", "Graphic"];
-      const line2Words = ["Designer", "Creator", "Manager", "Designer"];
+    const typewriter = (line1, line2, words1, words2) => {
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let isBottomDeleting = false;
 
-      const typewriter = (line1, line2, words1, words2) => {
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let isBottomDeleting = false;
+      const type = () => {
+        const currentWord1 = words1[wordIndex];
+        const currentWord2 = words2[wordIndex];
 
-        const type = () => {
-          const currentWord1 = words1[wordIndex];
-          const currentWord2 = words2[wordIndex];
-
-          if (!isDeleting) {
-            if (charIndex <= currentWord1.length) {
-              line1.textContent = currentWord1.slice(0, charIndex);
-            } else if (charIndex - currentWord1.length <= currentWord2.length) {
-              line2.textContent = currentWord2.slice(
-                0,
-                charIndex - currentWord1.length
-              );
-            }
-
-            if (charIndex === currentWord1.length + currentWord2.length) {
-              setTimeout(() => {
-                isDeleting = true;
-                isBottomDeleting = true;
-              }, 2000);
-            }
-          } else {
-            if (isBottomDeleting && charIndex > currentWord1.length) {
-              line2.textContent = currentWord2.slice(
-                0,
-                charIndex - currentWord1.length - 1
-              );
-            } else {
-              isBottomDeleting = false;
-              line1.textContent = currentWord1.slice(0, charIndex);
-            }
-
-            if (charIndex === 0) {
-              isDeleting = false;
-              wordIndex = (wordIndex + 1) % words1.length;
-            }
+        if (!isDeleting) {
+          if (charIndex <= currentWord1.length) {
+            line1.textContent = currentWord1.slice(0, charIndex);
+          } else if (charIndex - currentWord1.length <= currentWord2.length) {
+            line2.textContent = currentWord2.slice(
+              0,
+              charIndex - currentWord1.length
+            );
           }
 
-          charIndex += isDeleting ? -1 : 1;
-          setTimeout(type, isDeleting ? 50 : 100);
-        };
+          if (charIndex === currentWord1.length + currentWord2.length) {
+            setTimeout(() => {
+              isDeleting = true;
+              isBottomDeleting = true;
+            }, 2000);
+          }
+        } else {
+          if (isBottomDeleting && charIndex > currentWord1.length) {
+            line2.textContent = currentWord2.slice(
+              0,
+              charIndex - currentWord1.length - 1
+            );
+          } else {
+            isBottomDeleting = false;
+            line1.textContent = currentWord1.slice(0, charIndex);
+          }
 
-        type();
+          if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words1.length;
+          }
+        }
+
+        charIndex += isDeleting ? -1 : 1;
+        setTimeout(type, isDeleting ? 50 : 100);
       };
 
-      const line1 = document.getElementById("typewriter-line1");
-      const line2 = document.getElementById("typewriter-line2");
+      type();
+    };
 
-      typewriter(line1, line2, line1Words, line2Words);
-    });
-  </script>
-</BaseLayout>
+    const line1 = document.getElementById("typewriter-line1");
+    const line2 = document.getElementById("typewriter-line2");
+
+    typewriter(line1, line2, line1Words, line2Words);
+  });
+</script>
