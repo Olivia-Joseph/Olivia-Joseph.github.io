@@ -2,7 +2,7 @@
 title: 'Coachella'
 description: ''
 pubDate: '2024'
-heroImage: './public/blog-coachella-cover.webp'
+heroImage: '/blog-coachella-cover.webp'
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
