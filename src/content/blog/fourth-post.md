@@ -1,8 +1,9 @@
 ---
 title: 'Coachella'
 description: ''
-pubDate: '2024'
+pubDate: 'Jan 10 2024'
 heroImage: '/blog-coachella-cover.webp'
+tags: 'Webdesign'
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

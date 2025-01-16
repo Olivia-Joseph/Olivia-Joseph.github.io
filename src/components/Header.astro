@@ -7,8 +7,10 @@ import { SITE_TITLE } from "../consts";
   class="px-4 bg-white shadow-[0_0px_8px] min-h-14 shadow-black/20 text-black w-11/12 flex justify-start rounded-xl"
 >
   <nav class="flex w-full flex-row items-center justify-between px-6">
-    <div class="flex items-center w-full md:w-36 justify-between shrink-0">
-      <div class="items-center justify-center md:hidden">
+    <div
+      class="flex items-center w-full md:w-36 md:justify-between gap-16 md:gap-0 shrink-0"
+    >
+      <div class="items-center justify-center pt-2 md:hidden">
         <button id="burger-menu" class="text-gray-800 focus:outline-none">
           <svg
             width="28"
@@ -75,7 +77,7 @@ import { SITE_TITLE } from "../consts";
         </button>
       </div>
 
-      <h2 class="m-0 text-base">
+      <h2 class="mt-1 text-base">
         <a href="/" class="no-underline text-base font-light text-black"
           >{SITE_TITLE}</a
         >
