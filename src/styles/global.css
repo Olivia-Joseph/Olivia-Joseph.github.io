@@ -3,9 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+
+  @font-face {
+    font-family: 'Fraunces';
+    src: url('/fonts/Fraunces-BlackItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: black;
+  }
 }
 body {
   font-family: "Poppins", sans-serif;
+}
+
+.font-fraunces {
+  font-family: 'Fraunces', serif;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.hr {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.img {
+  width: 50%;
+  margin: 0 auto;
 }
 
 .uidesign {

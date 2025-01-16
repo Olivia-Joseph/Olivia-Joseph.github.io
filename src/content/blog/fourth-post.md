@@ -6,210 +6,80 @@ heroImage: '/blog-coachella-cover.webp'
 tags: 'Webdesign'
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+<section class="flex flex-col gap-3">
 
-## Headings
+<div class="bg-white p-4 rounded-lg">
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+<h2 class="pb-3 font-bold font-fraunces">📝 Brief</h2>
 
-# H1
+<p class="text-sm text-justify ">
+This is a university project where we were tasked with creating and implementing a visual communication campaign for a themed bar. Working in pairs, we developed a complete concept, starting with analysis and definition, followed by creating the visual identity, and finally producing various communication materials.
+</p>
 
-## H2
+</div>
 
-### H3
+<div class="bg-white p-4 rounded-lg">
 
-#### H4
+<h2 class="pb-2 font-bold font-fraunces"> 🏆 Goals</h2>
 
-##### H5
+<ul class="text-sm">
 
-###### H6
+<li class="py-2">• Branding</li>
+<hr class="hr"/>
+<li class="py-2">• Engagement</li>
+<hr class="hr" />
+<li class="py-2">• Recognition</li>
 
-## Paragraph
+</ul>
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+</div>
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+<div class="bg-white p-4 rounded-lg">
 
-## Images
+<h2 class="pb-2 font-bold font-fraunces">⚙️ Process</h2>
 
-### Syntax
+<p class="text-sm px-2">
+Once we established our concept, we began designing the logo. Initially, we each explored different identities individually. After several iterations, we decided to create a logo with custom shapes reminiscent of the western theme. We developed about twenty logo variations and selected the one that best represented our bar's identity and theme.
 
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
 
-### Output
+</p>
 
-![blog placeholder](/blog-placeholder-about.jpg)
+</div>
 
-## Blockquotes
+<div class="rounded-lg overflow-hidden">
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+![Visuel](/rustyspur/rusty-logos.png)
 
-### Blockquote without attribution
+</div>
 
-#### Syntax
+<ul class="flex rounded-md overflow-hidden">
 
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
+<li class=" img ">
 
-#### Output
+![Visuel](/rustyspur/rusty-menu1.png)
+</li>
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+<li class="img">
 
-### Blockquote with attribution
+![Visuel](/rustyspur/rusty-menu2.png)
+</li>
 
-#### Syntax
+</ul>
 
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
 
-#### Output
+<ul class="flex rounded-md overflow-hidden">
 
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
+<li class="img">
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+![Visuel](/rustyspur/rusty-menu3.png)
+</li>
 
-## Tables
+<li class="img">
 
-### Syntax
+![Visuel](/rustyspur/rusty-menu4.png)
+</li>
 
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
+</ul>
 
-### Output
+</section>
 
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
