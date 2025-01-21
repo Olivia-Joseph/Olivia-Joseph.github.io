@@ -3,7 +3,7 @@ title: 'BunBun'
 description: ''
 pubDate: 'Nov 01 2023'
 heroImage: '/blog-bunbun-cover.jpg'
-tags: 'Webdesign'
+tags: 'UI Design'
 ---
 <section class="flex flex-col gap-3">
 

@@ -11,9 +11,9 @@ const posts = (await getCollection("blog")).sort(
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main
-    class="w-full p-6 flex flex-col items-center justify-center gap-2 text-sm md:text-base md:flex-row md:gap-32"
+    class="w-full p-6 flex flex-col items-center justify-center gap-2 text-sm md:text-base md:gap-8"
   >
-    <h1 class="text-4xl font-black text-left w-full">CASE STUDIES</h1>
+    <h1 class="text-4xl font-black text-left w-full md:pl-24 md:pt-10 ">CASE STUDIES</h1>
 
     <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
@@ -28,7 +28,7 @@ const posts = (await getCollection("blog")).sort(
               </div>
               <!-- Cover Image -->
               <img
-                class="w-[330px] h-[330px] object-cover rounded-xl group-hover:opacity-90"
+                class="w-[330px] h-[330px] md:w-[400px] object-cover rounded-xl group-hover:opacity-90"
                 src={post.data.heroImage}
                 alt={post.data.title}
               />
