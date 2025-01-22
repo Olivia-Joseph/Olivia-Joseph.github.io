@@ -5,7 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main class="w-full p-6 flex flex-col items-center justify-center gap-6">
-    <div>
+    <div class="m-10">
       <p
         id="typewriter-line1"
         class="uidesign text-6xl md:text-9xl text-left font-bold tracking-wide min-h-[4rem] md:min-h-32"
@@ -19,13 +19,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       </p>
     </div>
 
-    <section class="w-full flex flex-col items-center justify-center gap-3 p-3">
+    <section
+      class="w-full flex flex-wrap items-center justify-center gap-3 p-3 parent md:gap-5 md:w-10/12"
+    >
       <!-- Who Am I Section -->
-      <section
-        class="bg-[#F2B2FF] rounded-lg p-4 max-w-2xl text-justify w-full"
-      >
-        <h2 class="text-[19px] font-bold mb-2">WHO AM I?</h2>
-        <p class="text-[11px]">
+      <section class="bg-[#F2B2FF] rounded-lg p-4 text-justify w-full pink">
+        <h2 class="text-[19px] font-bold mb-2 font-fraunces md:text-3xl">
+          WHO AM I?
+        </h2>
+        <p class="text-[11px] md:text-base">
           I share my creative world and the projects that fuel my passion. With
           a strong love for design and content creation, I bring my expertise to
           those looking to stand out with striking visuals and impactful
@@ -37,42 +39,48 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       </section>
 
       <!-- Areas & Location Section -->
-      <section class="grid grid-cols-2 md:grid-cols-2 gap-3 w-full">
-        <div class="bg-[#33FFB5] rounded-lg p-4">
-          <h3 class="text-[19px] font-bold mb-2">AREAS</h3>
-          <ul class="text-[11px]">
-            <li>Graphic Design</li>
-            <li>UI Design</li>
-            <li>Brand Identity</li>
-            <li>Web Design</li>
-            <li>SEO</li>
-          </ul>
-        </div>
-        <div class="bg-[#FFF820] rounded-lg p-4">
-          <h3 class="text-[19px] font-bold mb-2">LOCATION</h3>
-          <p class="text-[11px]">
-            Bachelor’s in Multimedia & Communications from the University of
-            Limoges, France
-          </p>
-        </div>
-      </section>
+      <div class="bg-[#33FFB5] rounded-lg p-4 green w-[145px] h-[151px]">
+        <h3 class="text-[19px] font-bold mb-2 font-fraunces md:text-3xl">
+          AREAS
+        </h3>
+        <ul class="text-[11px] md:text-base">
+          <li>Graphic Design</li>
+          <li>UI Design</li>
+          <li>Brand Identity</li>
+          <li>Web Design</li>
+          <li>SEO</li>
+        </ul>
+      </div>
+      <div class="bg-[#FFF820] rounded-lg p-4 yellow w-[145px] h-[151px]">
+        <h3 class="text-[19px] font-bold mb-2 font-fraunces md:text-3xl">
+          LOCATION
+        </h3>
+        <p class="text-[11px] md:text-base">
+          Bachelor’s in Multimedia & Communications from the University of
+          Limoges, France
+        </p>
+      </div>
 
       <section
-        class="bg-[#8C8FFF] rounded-lg p-4 max-w-2xl text-justify w-full md:flex md:flex-col md:w-2/12"
+        class="bg-[#8C8FFF] rounded-lg p-4 max-w-2xl text-justify w-full purple"
       >
-        <h2 class="text-[19px] font-bold mb-2">STATS</h2>
-        <ul class="flex gap-3 md:w-full justify-between md:px-10 md:flex-col">
+        <h2 class="text-[19px] font-bold mb-2 font-fraunces md:text-3xl">
+          STATS
+        </h2>
+        <ul
+          class="flex gap-3 md:w-full justify-between md:px-10 md:flex-col md:gap-8 md:items-center md:justify-center md:mt-16"
+        >
           <li class="flex flex-col items-center text-center">
-            <p class="text-[19px] font-bold">50+</p>
-            <p class="text-[11px]">Websites Created</p>
+            <p class="text-[19px] font-bold md:text-3xl">20+</p>
+            <p class="text-[11px] md:text-base">Websites Created</p>
           </li>
           <li class="flex flex-col items-center text-center">
-            <p class="text-[19px] font-bold">30+</p>
-            <p class="text-[11px]">Brands Designed</p>
+            <p class="text-[19px] font-bold md:text-3xl">10+</p>
+            <p class="text-[11px] md:text-base">Brands Designed</p>
           </li>
           <li class="flex flex-col items-center text-center">
-            <p class="text-[19px] font-bold">3</p>
-            <p class="text-[11px]">Years Experience</p>
+            <p class="text-[19px] font-bold md:text-3xl">3</p>
+            <p class="text-[11px] md:text-base">Years Experience</p>
           </li>
         </ul>
       </section>

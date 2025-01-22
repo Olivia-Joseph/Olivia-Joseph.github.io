@@ -34,6 +34,39 @@ body {
 .uidesign {
   color: black;
   font-weight: black;
+  font-family: 'Fraunces', serif;
 }
+
+@media screen and (min-width: 768px) {
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    }
+    
+  .pink { 
+    grid-area: 1 / 1 / 2 / 3; 
+    width: 100%;
+    height: 100%;
+  }
+  .yellow { grid-area: 2 / 1 / 3 / 2;
+    width: 100%;
+    height: 100%;
+  }
+  .green { grid-area: 2 / 2 / 3 / 3; 
+    width: 100%;
+    height: 100%;
+  }
+  .purple { 
+    grid-area: 1 / 3 / 3 / 4; 
+    width: 100%;
+    height: 100%;
+  }
+  
+}
+
+
 
 
